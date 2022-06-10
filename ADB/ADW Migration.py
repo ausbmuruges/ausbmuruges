@@ -1,0 +1,18 @@
+# Databricks notebook source
+# MAGIC %sql
+# MAGIC SELECT CAST(500 AS DOUBLE), cast(5.3E10 AS DOUBLE);
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC describe extended imprd001_rawvault.LSAT_SRVORDER_MATERIAL_CIS_RESB
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC SELECT CAST(6.01 AS FLOAT)
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC SELECT CAST(5 AS DECIMAL(4,3)), typeof(1.0000000000000000000000000000000000000) , 1.0000000000000000000000000000000000000, cast(1.36 as decimal), -0.0002F;

@@ -1,0 +1,53 @@
+# Databricks notebook source
+# MAGIC %sql
+# MAGIC CREATE TABLE IF NOT EXISTS imprd001_rawvault.SAT_PQ_SIQ_DEVICE_EVENT
+# MAGIC (
+# MAGIC 	 `HUB_DEVICE_HSH_KEY`   CHAR(40)
+# MAGIC 	,`LOAD_DATE_TIME`   TIMESTAMP
+# MAGIC 	,`EXTRACT_DATE_TIME`   TIMESTAMP
+# MAGIC 	,`RECORD_SOURCE`   VARCHAR(200)
+# MAGIC     ,`SAT_PQ_SIQ_DEVICE_EVENT_HSH_DIFF`    CHAR(40)
+# MAGIC     ,`EVENT_TIME`   TIMESTAMP
+# MAGIC     ,`TZ_OFFSET`   INT
+# MAGIC     ,`EVENT_CODE`   DOUBLE
+# MAGIC     ,`EVENT_CATEGORY`   INT
+# MAGIC 	,`EVENT_ARGS`   STRING
+# MAGIC 	,`EVENT_NAME`   STRING
+# MAGIC 	,`EVENT_VALUE`   DOUBLE
+# MAGIC 	,`REFERENCE_POINT`   DOUBLE
+# MAGIC 	,`OPERATION`   VARCHAR(32)
+# MAGIC 	,`UNIT_OF_MEASUREMENT`   VARCHAR(20)
+# MAGIC     ,`SET`   VARCHAR(10)
+# MAGIC 	,`SET_OR_CLEAR`   INT
+# MAGIC     ,`ETL_INSERT_DATETIME`   TIMESTAMP
+# MAGIC     ,`EVENTHUB_DATETIME`   TIMESTAMP
+# MAGIC         
+# MAGIC )
+# MAGIC USING DELTA
+# MAGIC PARTITIONED BY (EXTRACT_DATE_TIME)
+# MAGIC LOCATION 'dbfs:/mnt/imrv/deltalake/imprd001/rawvault/SAT_PQ_SIQ_DEVICE_EVENT/';
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC describe detail delta.`/mnt/imrv/deltalake/imprd001/rawvault/SAT_PQ_SIQ_DEVICE_EVENT/`
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC describe extended delta.`/mnt/imrv/deltalake/imprd001/rawvault/SAT_PQ_SIQ_DEVICE_EVENT/`
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC describe extended imprd001_rawvault.SAT_PQ_SIQ_DEVICE_EVENT
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC select * from imprd001_rawvault.SAT_PQ_SIQ_DEVICE_EVENT;
+
+# COMMAND ----------
+
+# MAGIC %sql
+# MAGIC show create table imprd001_rawvault.SAT_PQ_SIQ_DEVICE_EVENT
