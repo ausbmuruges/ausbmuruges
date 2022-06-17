@@ -33,7 +33,7 @@ dbutils.fs.updateMount(
 
 # COMMAND ----------
 
-display(dbutils.fs.ls(mount_path+'/deltalake'))
+display(dbutils.fs.ls(mount_path+'/deltalake/imdev01/'))
 
 # COMMAND ----------
 
